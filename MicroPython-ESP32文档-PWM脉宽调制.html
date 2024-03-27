@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>MicroPython-ESP32文档-PWM脉宽调制</title>
+		<style>
+	     body{ background-color: whitesmoke;}
+		.con{ margin:100px 350px; width:55%; background-color: white;}	
+		.tit{ margin:10px 10px; border-bottom:1px solid #CCCCCC ; border-top:15px;}
+		.tit h1{font-size:22px; color: dimgray;}
+		.txt{ margin:10px 10px; margin-bottom:80px; font-size:16px;color: dimgrey;}
+		
+		@media screen and (max-width: 600px) {
+		             .con{ margin:0px; width: 100%; border-bottom:1px solid #CCCCCC ;}
+					 
+				
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="con">
+			<div class="tit"><h1>MicroPython-ESP32文档-PWM脉宽调制</h1></div>
+			<div class="txt"><p>PWM可以在所有使能输出的引脚上使能。基频可以 范围从 1Hz 到 40MHz，但需要权衡;随着 基频的增加，占空比降低。</p><p>从机器导入引脚，PWM</p><p>pwm0 = PWM（Pin（0）， freq=5000， duty_u16=32768） # 创建 PWM 对象 一枚别针</p><p>freq = pwm0.freq（） # 获取当前频率</p><p>pwm0.freq（1000） # 设置 PWM 频率范围为 1Hz 至 40MHz</p><p>duty = pwm0.duty（） # 获取当前占空比，范围 0-1023（默认值 512,50%）</p><p>pwm0.duty（256） # 将占空比从 0 到 1023 设置为比率 duty/1023， （现在是 25%）</p><p>duty_u16 = pwm0.duty_u16（） # 获取当前占空比，范围 0-65535</p><p>pwm0.duty_u16（2**16*3//4） # 将占空比从 0 设置为 65535 duty_u16/65535，（现在为 75%）</p><p>duty_ns = pwm0.duty_ns（） # 获取电流脉冲宽度，单位为 ns</p><p>pwm0.duty_ns（250_000） # 设置脉冲宽度（以纳秒为单位），从 0 到 1_000_000_000/freq，（现在是 25%）</p><p>pwm0.deinit（） # 关闭引脚上的 PWM</p><p>pwm2 = PWM（Pin（2）， freq=20000， duty=512） # 一次性创建和配置</p><p>print（pwm2） # 查看PWM设置</p><p><br/></p></div>
+			
+		</div>
+	</body>
+</html>
