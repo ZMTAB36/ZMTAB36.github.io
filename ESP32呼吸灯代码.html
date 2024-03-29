@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>MicroPython-ESP32呼吸灯代码</title>
+		<style>
+	     body{ background-color: whitesmoke;}
+		.con{ margin:100px 350px; width:55%; background-color: white;}	
+		.tit{ margin:10px 10px; border-bottom:1px solid #CCCCCC ; border-top:15px;}
+		.tit h1{font-size:22px; color: dimgray;}
+		.txt{ margin:10px 10px; margin-bottom:80px; font-size:16px;color: dimgrey;}
+		
+		@media screen and (max-width: 600px) {
+		             .con{ margin:0px; width: 100%; border-bottom:1px solid #CCCCCC ;}
+					 
+				
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="con">
+			<div class="tit"><h1>MicroPython-ESP32呼吸灯代码</h1></div>
+			<div class="txt"><p>from machine import Pin, PWM</p><p>import time</p><p>led2 = PWM(Pin(2))</p><p>led2.freq(1000)</p><p>while True:</p><p>&nbsp; &nbsp; for i in range(1,1023):</p><p>&nbsp; &nbsp; &nbsp; &nbsp;led2.duty(i)</p><p>&nbsp; &nbsp; &nbsp; &nbsp;time.sleep_ms(2)</p><p>&nbsp; &nbsp; for i in range(1023,-1,-1):</p><p>&nbsp; &nbsp; &nbsp; &nbsp;led2.duty(i)</p><p>&nbsp; &nbsp; &nbsp; &nbsp;time.sleep_ms(2)</p><p><br/></p></div>
+			
+		</div>
+	</body>
+</html>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8c671a94f344a2df44601ff884da0985";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
