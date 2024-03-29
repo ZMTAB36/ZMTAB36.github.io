@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>McroPython-ESP32驱动1306OLED程序</title>
+		<style>
+	     body{ background-color: whitesmoke;}
+		.con{ margin:100px 350px; width:55%; background-color: white;}	
+		.tit{ margin:10px 10px; border-bottom:1px solid #CCCCCC ; border-top:15px;}
+		.tit h1{font-size:22px; color: dimgray;}
+		.txt{ margin:10px 10px; margin-bottom:80px; font-size:16px;color: dimgrey;}
+		
+		@media screen and (max-width: 600px) {
+		             .con{ margin:0px; width: 100%; border-bottom:1px solid #CCCCCC ;}
+					 
+				
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="con">
+			<div class="tit"><h1>McroPython-ESP32驱动1306OLED程序</h1></div>
+			<div class="txt"><pre style="box-sizing: border-box; line-height: 1.4; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, Courier, monospace; font-size: 12px; margin-top: 0px; margin-bottom: 0px; padding: 12px; overflow: auto; color: rgb(64, 64, 64);">from&nbsp;machine&nbsp;import&nbsp;Pin,&nbsp;I2Cimport&nbsp;ssd1306i2c&nbsp;=&nbsp;I2C(scl=Pin(5),&nbsp;sda=Pin(4),&nbsp;freq=100000)display&nbsp;=&nbsp;ssd1306.SSD1306_I2C(128,&nbsp;64,&nbsp;i2c)display.text(&#39;Hello&nbsp;World&#39;,&nbsp;0,&nbsp;0,&nbsp;1)display.show()</pre><p><br/></p></div>
+			
+		</div>
+	</body>
+</html>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8c671a94f344a2df44601ff884da0985";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
