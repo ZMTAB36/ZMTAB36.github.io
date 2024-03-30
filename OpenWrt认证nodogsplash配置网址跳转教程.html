@@ -22,7 +22,10 @@
 	<body>
 		<div class="con">
 			<div class="tit"><h1>OpenWrt认证nodogsplash配置网址跳转教程</h1></div>
-			<div class="txt"><p>opkg 更新 #更新</p><p>opkg 安装 nodogsplash #安装</p><p>默认情况下，nodogsplash在安装后处于禁用状态;将 /etc/config/nodogsplash 中的“option enabled”从 0 更改为 1 以启用它。</p><p>找到nodogsplash文件，安装后没有nodogsplash.conf，需要自己添加，nodogsplash.conf里面添加这几个参数</p><p>GatewayInterface wlan0 #网口</p><p>重定向URL #填写网址后跳转到网址</p><p>ClientForceTimeout 1 #认证时间/分后</p><p>实现网址跳转还要修改路径后才可以，找到config文件-找到nodogsplash打开后找到这两个参数</p><p>使用普通配置文件</p><p>选项配置 &#39;/etc/nodogsplash/nodogsplash.conf&#39;</p><p>把前面的#去掉，然后重启就可以了</p><p><br/></p></div>
+			<div class="txt"><p>opkg 更新 #更新</p><p>opkg 安装 nodogsplash #安装</p><p>默认情况下，nodogsplash在安装后处于禁用状态;将 /etc/config/nodogsplash 中的“option enabled”从 0 更改为 1 以启用它。</p>
+				<p>找到nodogsplash文件，安装后没有nodogsplash.conf，需要自己添加，nodogsplash.conf里面添加这个参数实现登录后跳转</p>
+				<p>RedirectURL https://www.zmtab36.com #填写自己网址后跳转，可以做APP邀请链接适合推广赚佣金</p>
+				<p>实现网址跳转还要修改路径后才可以，找到config文件-找到nodogsplash打开后找到这两个参数</p><p>使用普通配置文件</p><p>选项配置 &#39;/etc/nodogsplash/nodogsplash.conf&#39;</p><p>把前面的#去掉，然后重启就可以了</p><p><br/></p></div>
 			
 		</div>
 	</body>
