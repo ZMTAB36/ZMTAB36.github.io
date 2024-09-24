@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>Arduino常用函数介绍 </title>
+		<style>
+	     body{ background-color: whitesmoke;}
+		 h3{margin:0px 350px;}
+		 h3 li a{text-decoration:none; color: coral;}
+		.con{ margin:20px 350px; width:55%; background-color: white;}	
+		.tit{ margin:10px 10px; border-bottom:1px solid #CCCCCC ; border-top:15px;}
+		.tit h1{font-size:22px; color: dimgray;}
+		.txt{ margin:10px 10px; margin-bottom:80px; font-size:16px;color: dimgrey;word-wrap: break-word;}
+		
+		@media screen and (max-width: 600px) {
+		h3{margin:0px;  text-decoration:none; color: coral;}
+		h3 li a{text-decoration:none; color: coral;}
+		.con{ margin:0px; width: 100%; border-bottom:1px solid #CCCCCC ;dimgrey;word-wrap: break-word;}
+		
+		}
+		
+		</style>
+	</head>
+	<body>
+		<h3><li><a href="https://zmtab36.github.io/">返回首页</a></li><br></h3>
+		<div class="con">
+			<div class="tit"><h1>Arduino常用函数介绍 </h1></div>
+			<div class="txt"><p><span style="text-wrap: nowrap;">常用函数介绍 :</span><br/></p><p><span style="text-wrap: nowrap;">下面列出了一些常用的 Arduino 函数:</span></p><p><br/></p><p><span style="text-wrap: nowrap;">void数据类型</span></p><p><span style="text-wrap: nowrap; color: rgb(255, 192, 0);">void setup</span><span style="text-wrap: nowrap;">{</span></p><p><span style="text-wrap: nowrap;">}</span></p><p><span style="text-wrap: nowrap;">//setup函数</span></p><p><span style="text-wrap: nowrap;">在开发板通电或者复位后就会执行setup()函数中的程序</span></p><p><span style="text-wrap: nowrap;">通常我们会在这个setup()函数中完成arduino的初始设置</span></p><p><span style="text-wrap: nowrap;">就比如配置IO口的状态初始化串口等等操作</span></p><p><span style="text-wrap: nowrap;"><br/></span></p><p><span style="text-wrap: nowrap; color: rgb(255, 192, 0);">void loop</span><span style="text-wrap: nowrap;">{</span></p><p><span style="text-wrap: nowrap;">}</span></p><p><span style="text-wrap: nowrap;">//loop函数</span></p><p><span style="text-wrap: nowrap;">循环在setup()函数中的程序执行完成后，arduino会接着执行loop()函数中的程序</span></p><p><span style="text-wrap: nowrap;">loop函数是一个死循环，其中的程序会不断的重复运行，通常我们会在loop函数中完成主要程序功能</span></p><p><span style="text-wrap: nowrap;">比如各种模块采集数据等等</span></p><p><br/></p><p><span style="text-wrap: nowrap;">1.`<span style="text-wrap: nowrap; color: rgb(255, 192, 0);">pinMode(pin，mode)</span>`：用于配置数字引脚的输入或输出模式。pin 是数字引脚的编号，mode 是要设置的模式（输入或输出）。</span></p><p><span style="text-wrap: nowrap;"><br/></span></p><p><span style="text-wrap: nowrap;">2.`<span style="text-wrap: nowrap; color: rgb(255, 192, 0);">digitalWrite(pin，value)</span>`:用于在数字引脚上写入数字值（HIGH或LOW）。pin 是数字引脚的编号,value 是要写入的值。</span></p><p><span style="text-wrap: nowrap;"><br/></span></p><p><span style="text-wrap: nowrap;">3. `<span style="text-wrap: nowrap; color: rgb(255, 192, 0);">digitalRead(pin)</span>`:用于读取数字引脚上的数字值（HIGH或 LOW）。pin 是数字引脚的编号。</span></p><p><span style="text-wrap: nowrap;"><br/></span></p><p><span style="text-wrap: nowrap;">4.`<span style="text-wrap: nowrap; color: rgb(255, 192, 0);">analogRead(pin)</span>`：用于读取模拟引脚上的模拟值（0-1023）。pin 是模拟引脚的编号。</span></p><p><span style="text-wrap: nowrap;"><br/></span></p><p><span style="text-wrap: nowrap;">5.`<span style="text-wrap: nowrap; color: rgb(255, 192, 0);">analogWrite(pin，value)</span>`:用于在支持 PWM输出的数字引脚上输出模拟值（0-255）。pin 是数字引脚的编号，value 是要输出的值。</span></p><p><span style="text-wrap: nowrap;"><br/></span></p><p><span style="text-wrap: nowrap;">6.`<span style="text-wrap: nowrap; color: rgb(255, 192, 0);">delay(ms）</span>：用于在程序中创建暂停（延迟）时间。ms 是要延迟的毫秒数。</span></p><p><span style="text-wrap: nowrap;"><br/></span></p><p><span style="text-wrap: nowrap;">7. `<span style="text-wrap: nowrap; color: rgb(255, 192, 0);">Serial.begin(baud)</span>`:用于初始化串口通信，其中 baud 是波特率。</span></p><p><span style="text-wrap: nowrap;"><br/></span></p><p><span style="text-wrap: nowrap;">8.`<span style="text-wrap: nowrap; color: rgb(255, 192, 0);">Serial.println(data)</span>`：用于将数据打印到串口监视器。data 可以是数字，字符串或其他数据类型。</span></p><p><br/></p></div>
+			
+		</div>
+	</body>
+</html>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8c671a94f344a2df44601ff884da0985";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
