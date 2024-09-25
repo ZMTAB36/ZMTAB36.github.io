@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>Arduino驱动oled代码</title>
+		<style>
+	     body{ background-color: whitesmoke;}
+		 h3{margin:0px 350px;}
+		 h3 li a{text-decoration:none; color: coral;}
+		.con{ margin:20px 350px; width:55%; background-color: white;}	
+		.tit{ margin:10px 10px; border-bottom:1px solid #CCCCCC ; border-top:15px;}
+		.tit h1{font-size:22px; color: dimgray;}
+		.txt{ margin:10px 10px; margin-bottom:80px; font-size:16px;color: dimgrey;word-wrap: break-word;}
+		
+		@media screen and (max-width: 600px) {
+		h3{margin:0px;  text-decoration:none; color: coral;}
+		h3 li a{text-decoration:none; color: coral;}
+		.con{ margin:0px; width: 100%; border-bottom:1px solid #CCCCCC ;dimgrey;word-wrap: break-word;}
+		
+		}
+		
+		</style>
+	</head>
+	<body>
+		<h3><li><a href="https://zmtab36.github.io/">返回首页</a></li><br></h3>
+		<div class="con">
+			<div class="tit"><h1>Arduino驱动oled代码</h1></div>
+			<div class="txt"><p><span style="color: #c586c0;">#include</span><span style="color: #569cd6;"> </span><span style="color: #ce9178;">&lt;U8g2lib.h&gt;</span></p><p><span style="color: #6a9955;">//构造对象</span></p><p><span style="color: #4ec9b0;">U8G2_SSD1306_128X64_NONAME_F_SW_I2C</span> <span style="color: #9cdcfe;">u8g2</span>(<span style="color: #569cd6;">U8G2_R0</span>, &nbsp;<span style="color: #b5cea8;">4</span>, <span style="color: #b5cea8;">5</span>, <span style="color: #569cd6;">U8X8_PIN_NONE</span>);</p><p><span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">setup</span>() {</p><p><span style="color: #6a9955;">//初始化OLED对象</span></p><p><span style="color: #9cdcfe;">u8g2</span>.<span style="color: #dcdcaa;">begin</span>();</p><p><span style="color: #6a9955;">//开启中文字符集</span></p><p><span style="color: #9cdcfe;">u8g2</span>.<span style="color: #dcdcaa;">enableUTF8Print</span>();</p><p><span style="color: #6a9955;">//设置中文</span></p><p><span style="color: #9cdcfe;">u8g2</span>.<span style="color: #dcdcaa;">setFont</span>(<span style="color: #9cdcfe;">u8g2_font_wqy16_t_gb2312</span>);</p><p>}</p><p><span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">loop</span>() {</p><p><span style="color: #6a9955;">&nbsp; //清楚缓存区内容</span></p><p>&nbsp; <span style="color: #9cdcfe;">u8g2</span>.<span style="color: #dcdcaa;">clearBuffer</span>();</p><p><span style="color: #6a9955;">&nbsp; //位置显示</span></p><p>&nbsp; <span style="color: #9cdcfe;">u8g2</span>.<span style="color: #dcdcaa;">setCursor</span>(<span style="color: #b5cea8;">10</span>,<span style="color: #b5cea8;">20</span>);</p><p><span style="color: #6a9955;">&nbsp; //绘制内容</span></p><p>&nbsp; <span style="color: #9cdcfe;">u8g2</span>.<span style="color: #dcdcaa;">print</span>(<span style="color: #ce9178;">&quot;黎洪刚&quot;</span>);</p><p><span style="color: #6a9955;">&nbsp; //发送缓存区内容到OLED显示</span></p><p>&nbsp; <span style="color: #9cdcfe;">u8g2</span>.<span style="color: #dcdcaa;">sendBuffer</span>();</p><p>}</p><p><br/></p></div>
+			
+		</div>
+	</body>
+</html>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8c671a94f344a2df44601ff884da0985";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
