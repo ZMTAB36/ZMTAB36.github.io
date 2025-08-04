@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电视剧凡人修仙传全集免费在线观看</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .player-container {
+            background-color: #000;
+            margin-bottom: 20px;
+        }
+        #video {
+            width: 100%;
+            max-height: 80vh;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .episode-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .episode-btn {
+            padding: 8px 12px;
+            background-color: #2196F3;
+        }
+        .episode-btn.active {
+            background-color: #0b7dda;
+            font-weight: bold;
+        }
+        .info {
+			display: none;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+		h1{font-size: 18px;}
+    </style>
+</head>
+<body>
+    <h1>凡人修仙传免费在线观看</h1>
+    
+	<div class="info">
+	    <h2 id="current-episode-title">正在播放: 第1集</h2>
+		<p id="current-episode-desc"></p>
+	</div>
+    
+    <div class="player-container">
+        <video id="video" controls></video>
+    </div>
+    
+    <div class="controls">
+        <div>
+            <button id="prev-btn">上一集</button>
+            <button id="next-btn">下一集</button>
+        </div>
+        <div>
+            <button id="auto-next-btn">自动下一集: 开启</button>
+            <button id="fullscreen-btn">全屏</button>
+        </div>
+    </div>
+    
+    <h3>剧集列表</h3>
+    <div class="episode-list" id="episode-list">
+        <!-- 剧集列表将通过JavaScript动态生成 -->
+    </div>
+    
+    <script>
+        // 剧集数据 - 替换为你的实际M3U8链接
+        const episodes = [
+            {
+                title: "第1集",
+                desc: "第一集剧情简介...",
+                url: "https://v11.gggread.com/wjv11/202507/27/pMSwH8hceg83/video/index.m3u8"
+            },
+            {
+                title: "第2集",
+                desc: "第一集剧情简介...",
+                url: "https://example.com/episode2.m3u8"
+            },
+            {
+                title: "第3集",  
+                desc: "第一集剧情简介...",
+                url: "https://example.com/episode3.m3u8"
+            },
+            // 添加更多集...
+        ];
+        
+        // 当前播放的集数索引
+        let currentEpisodeIndex = 0;
+        let autoNextEnabled = true;
+        let hls = null;
+        const video = document.getElementById('video');
+        
+        // 初始化播放器
+        function initPlayer() {
+            if (hls) {
+                hls.destroy();
+            }
+            
+            if (Hls.isSupported()) {
+                hls = new Hls();
+                hls.loadSource(episodes[currentEpisodeIndex].url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    video.play().catch(e => {
+                        console.error("自动播放失败:", e);
+                    });
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                // Safari原生支持
+                video.src = episodes[currentEpisodeIndex].url;
+                video.addEventListener('loadedmetadata', function() {
+                    video.play().catch(e => {
+                        console.error("自动播放失败:", e);
+                    });
+                });
+            }
+            
+            // 更新UI
+            updateUI();
+        }
+        
+        // 更新UI显示
+        function updateUI() {
+            document.getElementById('current-episode-title').textContent = `正在播放: ${episodes[currentEpisodeIndex].title}`;
+            document.getElementById('current-episode-desc').textContent = episodes[currentEpisodeIndex].desc;
+            
+            // 更新剧集列表按钮状态
+            const episodeList = document.getElementById('episode-list');
+            episodeList.innerHTML = '';
+            
+            episodes.forEach((episode, index) => {
+                const btn = document.createElement('button');
+                btn.className = `episode-btn ${index === currentEpisodeIndex ? 'active' : ''}`;
+                btn.textContent = episode.title;
+                btn.addEventListener('click', () => {
+                    currentEpisodeIndex = index;
+                    initPlayer();
+                });
+                episodeList.appendChild(btn);
+            });
+            
+            // 更新自动下一集按钮状态
+            document.getElementById('auto-next-btn').textContent = 
+                `自动下一集: ${autoNextEnabled ? '开启' : '关闭'}`;
+        }
+        
+        // 播放下一集
+        function playNextEpisode() {
+            if (currentEpisodeIndex < episodes.length - 1) {
+                currentEpisodeIndex++;
+                initPlayer();
+            } else {
+                alert('已经是最后一集了');
+            }
+        }
+        
+        // 播放上一集
+        function playPrevEpisode() {
+            if (currentEpisodeIndex > 0) {
+                currentEpisodeIndex--;
+                initPlayer();
+            } else {
+                alert('已经是第一集了');
+            }
+        }
+        
+        // 事件监听
+        document.getElementById('prev-btn').addEventListener('click', playPrevEpisode);
+        document.getElementById('next-btn').addEventListener('click', playNextEpisode);
+        
+        document.getElementById('auto-next-btn').addEventListener('click', function() {
+            autoNextEnabled = !autoNextEnabled;
+            updateUI();
+        });
+        
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+        });
+        
+        // 监听视频结束事件
+        video.addEventListener('ended', function() {
+            if (autoNextEnabled) {
+                playNextEpisode();
+            }
+        });
+        
+        // 初始化
+        initPlayer();
+    </script>
+</body>
+</html>
