@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zmtab36.github.io/sitemap.xml
