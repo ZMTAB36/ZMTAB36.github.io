@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+	<title>用ollama搭建一套完全本地运行的私有知识库</title>
+	<meta name="description" content="用ollama搭建一套完全本地运行的私有知识库">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://zmtab66.top/css/text.css">
+	
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header>
+        <div class="container">
+            <div class="logo"><a href="https://zmtab36.github.io">首页-资识笔记博客</a></div>
+        </div>
+    </header>
+   
+    
+    <!-- 主要内容区 -->
+    <div class="container">
+        <div class="content">
+            <!-- 主内容 -->
+            <main>
+                <article>
+                    <h1>用ollama搭建一套完全本地运行的私有知识库</h1>
+                    <div class="meta">
+                        <span>阅读量：1万+</span>
+                    </div>
+                    
+                    <div class="article-content">
+                       <p><span style="color: rgb(38, 38, 38);">RAG检索增强生成，让大模型基于你自己的文档来回答问题。</span></p><p><span style="color: rgb(38, 38, 38);">本地运行的私有知识库，数据不出你的电脑，用到的工具全部免费开源。</span></p><p><span style="color: rgb(38, 38, 38);">你上传文档（PDF、Word、TXT 等）。</span></p><p><span style="color: rgb(38, 38, 38);">系统把文档切成小块，转成向量存起来。</span></p><p><span style="color: rgb(38, 38, 38);">你提问时，系统先从向量库里找到最相关的段落。</span></p><p><span style="color: rgb(38, 38, 38);">把这些段落作为上下文，交给大模型生成回答。</span></p><p>使用的工具<span style="color: rgb(227, 108, 9);">AnythingLLM</span>推荐新手首选。</p><p><span style="color: rgb(38, 38, 38);">有独立桌面应用（Windows/Mac/Linux），下载就能用。</span></p><p><span style="color: rgb(38, 38, 38);">内置 RAG + AI Agent + 向量数据库，不用单独装一堆组件。</span></p><p><span style="color: rgb(38, 38, 38);">支持 30+ 种 LLM 接入，包括 Ollama 本地模型。</span></p><p><span style="color: rgb(38, 38, 38);">支持 PDF、Word、TXT、网页等多种格式。</span></p><p><span style="color: rgb(38, 38, 38);">界面友好，拖拽上传文档就行。</span></p><p><span style="color: rgb(227, 108, 9);">本地电脑安装ollama</span>，先下载一个<span style="color: rgb(84, 141, 212);">AI问答</span>模型配合。</p><p>在安装索检模型：</p><p><span style="color: rgb(0, 176, 80);">ollama pull nomic-embed-text</span></p><p>去官网 anythingllm.com下载桌面版安装包。</p><p><span style="font-family: system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Sans&quot;, Roboto, sans-serif; letter-spacing: 0.5px; text-align: justify; background-color: rgb(255, 255, 255); color: rgb(227, 108, 9);">在AnythingLLM的设置里：</span></p><p>LLM 设置 → 选择 Ollama → 模型选 <span style="color: rgb(54, 96, 146);">gemma4:e2b</span>或者e4b，根据电脑配置选择。</p><p>嵌入模型 → 选择 Ollama → 模型选 nomic-embed-text</p><p>向量数据库 → 保持默认的 LanceDB 就行（内置的，不用额外安装）</p><p>Ollama 默认运行在 <span style="color: rgb(84, 141, 212);">http://localhost:11434</span>，AnythingLLM 会自动检测到。</p><p>点击左侧 &quot;New Workspace&quot; 创建一个工作区，比如叫&quot;产品文档&quot;</p><p>点击工作区设置里的<span style="color: rgb(227, 108, 9);">Upload Documents</span></p><p>把你的文档拖进去——支持 PDF、Word、TXT、Markdown、网页链接等</p><p>点击<span style="color: rgb(227, 108, 9);">Move to Workspace</span>开始向量化处理</p><p>处理完成后，你就可以在聊天框里提问了！</p><p><span style="font-family: system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Sans&quot;, Roboto, sans-serif; letter-spacing: 0.5px; text-align: justify; background-color: rgb(255, 255, 255); color: rgb(12, 12, 12);">在工作区设置里开启 &quot;Query Mode&quot;，模型只会基于文档内容回答。</span></p><p><span style="font-family: system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Sans&quot;, Roboto, sans-serif; letter-spacing: 0.5px; text-align: justify; background-color: rgb(255, 255, 255); color: rgb(12, 12, 12);">不会用自己的知识&quot;<span style="font-family: system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Sans&quot;, Roboto, sans-serif; letter-spacing: 0.5px; text-align: justify; background-color: rgb(255, 255, 255); color: rgb(227, 108, 9);">补充</span>&quot;适合对准确性要求高的场景。</span><br/></p>
+                    </div>
+                </article>
+            </main>
+            
+       
+          
+				</div>
+				</div>
+				
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 资识笔记博客 </p>
+        </div>
+    </footer>
+
+</body>
+</html>
